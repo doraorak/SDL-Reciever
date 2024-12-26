@@ -14,7 +14,6 @@ std::unique_ptr<SDLcontext> sdlctx;
 
 int SDL_ThreadFn(void* data){
     
-    receiver* rcvr = static_cast<receiver*>(data);
     rcvr->receiveLoop();
     
     return 1;
@@ -32,7 +31,9 @@ int main(void){
     
     SDL_CreateWindowAndRenderer("window", 1512, 982, SDL_WINDOW_RESIZABLE, &(sdlctx->window), &(sdlctx->renderer));
     
-    SDL_Thread* rthread = SDL_CreateThread(SDL_ThreadFn, "recieverThread", rcvr.get());
+    // sdlctx->window = SDL_CreateWindow("window", 1512, 982, 0);
+    
+    SDL_Thread* rthread = SDL_CreateThread(SDL_ThreadFn, "recieverThread", NULL);
     
     int running = 1;
     SDL_Event event;

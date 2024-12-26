@@ -17,6 +17,7 @@ void SDLcontext::drawPixelBuffer(void* pb, size_t size){
         SDL_RenderPresent(this->renderer);
     }
     
-    SDL_DestroySurface(this->surface);
-    SDL_DestroyTexture(this->texture);
+    
+    //SDL_DestroySurface(this->surface);
+    //SDL_DestroyTexture(this->texture);
 }
