@@ -7,31 +7,31 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8CDA4ACF-0CE0-4ACE-9183-658A7F5D2A6C"
+            uuid = "C12F945F-C36E-46A3-AA8D-A60D4E1B68B0"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SDLTest/receiver.cpp"
+            filePath = "SDLTest/SDLcontext.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "receiver::processPacket(packet)"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "SDLcontext::drawPixelBuffer(pb, size)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "64FDAF3B-11C8-4059-A1E3-3D60DA318BA4"
+            uuid = "9AF9AF8B-C159-43B5-B206-EF4E5F626AFD"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SDLTest/receiver.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "receiver::processPacket(packet)"
             landmarkType = "7">
          </BreakpointContent>

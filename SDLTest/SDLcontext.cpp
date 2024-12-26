@@ -7,22 +7,16 @@
 #include "SDLcontext.hpp"
 
 void SDLcontext::drawPixelBuffer(void* pb, size_t size){
+  
+    this->surface = SDL_CreateSurfaceFrom(1512, 982, SDL_PIXELFORMAT_RGBA64_FLOAT, pb, 12160);
     
-    int texBPR;
-    void* texPB = NULL;
+    this->texture = SDL_CreateTextureFromSurface(this->renderer, this->surface);
     
-    SDL_LockTexture(this->texture, NULL, &texPB, &texBPR);
-    
-    std::cout << texBPR;
-    
-    if(texPB != NULL){
-        
-        memcpy(texPB, pb, size - (1024 * 64));
-        
-        SDL_UnlockTexture(this->texture);
+    if(this->texture && this->surface){
+        SDL_RenderTexture(this->renderer, this->texture, NULL, NULL);
+        SDL_RenderPresent(this->renderer);
     }
     
-    SDL_RenderClear(this->renderer);
-    SDL_RenderTexture(this->renderer, this->texture, NULL, NULL);
-    SDL_RenderPresent(this->renderer);
+    SDL_DestroySurface(this->surface);
+    SDL_DestroyTexture(this->texture);
 }

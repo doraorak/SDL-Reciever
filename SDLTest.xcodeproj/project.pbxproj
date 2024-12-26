@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1470CA782D1ADFCA00B3DBBC /* SDL3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1470CA772D1ADFCA00B3DBBC /* SDL3.framework */; };
-		1470CA792D1ADFCA00B3DBBC /* SDL3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1470CA772D1ADFCA00B3DBBC /* SDL3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		14536C8F2D1D4B7B00C219FD /* SDL3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14536C8E2D1D4B7B00C219FD /* SDL3.framework */; };
+		14536C902D1D4B7B00C219FD /* SDL3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14536C8E2D1D4B7B00C219FD /* SDL3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,7 +18,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1470CA792D1ADFCA00B3DBBC /* SDL3.framework in Embed Frameworks */,
+				14536C902D1D4B7B00C219FD /* SDL3.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -27,7 +27,7 @@
 
 /* Begin PBXFileReference section */
 		142645BD2D174D8B00A3A0FD /* SDLTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDLTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1470CA772D1ADFCA00B3DBBC /* SDL3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL3.framework; path = ../../../../../Library/Frameworks/SDL3.framework; sourceTree = "<group>"; };
+		14536C8E2D1D4B7B00C219FD /* SDL3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL3.framework; path = ../../../../../Library/Frameworks/SDL3.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1470CA782D1ADFCA00B3DBBC /* SDL3.framework in Frameworks */,
+				14536C8F2D1D4B7B00C219FD /* SDL3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +70,7 @@
 		142717052D17A61000F44ACF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1470CA772D1ADFCA00B3DBBC /* SDL3.framework */,
+				14536C8E2D1D4B7B00C219FD /* SDL3.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

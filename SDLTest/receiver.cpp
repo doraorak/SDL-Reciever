@@ -14,8 +14,6 @@ void SDL_MainThreadFn(void* data){
 
 void receiver::processPacket(connection::packet* packet){
     
-    //printf("body \n");
-
     if(_highestOrder == 0){
         _rbytes = calloc(packet->frameSize, 1);
         _highestOrder = packet->order;
@@ -29,7 +27,6 @@ void receiver::processPacket(connection::packet* packet){
     
     if(packet->byteOffset == packet->frameSize - packet->byteCount){ //arc4random_uniform(5000) == 0
                 
-        printf("last \n");
         sizedPointer passArgs;
         passArgs.ptr = (_rbytes);
         passArgs.size = (packet->frameSize);
@@ -40,7 +37,7 @@ void receiver::processPacket(connection::packet* packet){
 
 void receiver::receiveLoop(){
     
-    printf("in thread loop");
+    printf("\nin thread loop");
     
     connection::packet pkt;
     while(true){

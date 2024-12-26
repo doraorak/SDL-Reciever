@@ -31,14 +31,6 @@ int main(void){
     SDL_Init(SDL_INIT_VIDEO);
     
     SDL_CreateWindowAndRenderer("window", 1512, 982, SDL_WINDOW_RESIZABLE, &(sdlctx->window), &(sdlctx->renderer));
-        
-    sdlctx->texture = SDL_CreateTexture(
-                        sdlctx->renderer,
-                        SDL_PIXELFORMAT_RGBA64_FLOAT, // Adjust this format to match your framebuffer's pixel format
-                        SDL_TEXTUREACCESS_STREAMING,
-                        1512,
-                        982
-                    );
     
     SDL_Thread* rthread = SDL_CreateThread(SDL_ThreadFn, "recieverThread", rcvr.get());
     

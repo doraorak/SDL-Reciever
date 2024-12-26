@@ -12,6 +12,7 @@ public:
     SDL_Renderer* renderer;
     SDL_Window* window;
     SDL_Texture* texture;
+    SDL_Surface* surface;
     
     void drawPixelBuffer(void* pb, size_t size);
 };
