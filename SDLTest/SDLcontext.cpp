@@ -8,7 +8,7 @@
 
 void SDLcontext::drawPixelBuffer(void* pb, size_t size){
   
-    this->surface = SDL_CreateSurfaceFrom(1512, 982, SDL_PIXELFORMAT_RGBA64_FLOAT, pb, 12160);
+    this->surface = SDL_CreateSurfaceFrom(1512, 982, SDL_PIXELFORMAT_BGRA32, pb, 6144);//SDL_PIXELFORMAT_RGBA64_FLOAT 12160
     
     this->texture = SDL_CreateTextureFromSurface(this->renderer, this->surface);
     
@@ -18,6 +18,6 @@ void SDLcontext::drawPixelBuffer(void* pb, size_t size){
     }
     
     
-    //SDL_DestroySurface(this->surface);
-    //SDL_DestroyTexture(this->texture);
+    SDL_DestroySurface(this->surface);
+    SDL_DestroyTexture(this->texture);
 }

@@ -6,7 +6,11 @@
 //
 
 #include <stdio.h>
+#include <SDL3/SDL.h>
+#include <SDL3/SDL_main.h>
 #include "SDLcontext.hpp"
+#include "receiver.hpp"
+#include "networking.h"
 
 std::unique_ptr<connection> con;
 std::unique_ptr<receiver> rcvr;
@@ -19,7 +23,7 @@ int SDL_ThreadFn(void* data){
     return 1;
 }
 
-int main(void){
+int main(int argc, char *argv[]){
     con = std::make_unique<connection>();
     rcvr = std::make_unique<receiver>();
     sdlctx = std::make_unique<SDLcontext>();
@@ -29,9 +33,18 @@ int main(void){
     
     SDL_Init(SDL_INIT_VIDEO);
     
-    SDL_CreateWindowAndRenderer("window", 1512, 982, SDL_WINDOW_RESIZABLE, &(sdlctx->window), &(sdlctx->renderer));
+    //SDL_CreateWindowAndRenderer("window", 1512, 982, SDL_WINDOW_RESIZABLE | SDL_WINDOW_HIGH_PIXEL_DENSITY, &(sdlctx->window), &(sdlctx->renderer));
+    sdlctx->window = SDL_CreateWindow("window", 1512, 982, SDL_WINDOW_RESIZABLE | SDL_WINDOW_HIGH_PIXEL_DENSITY);
     
-    // sdlctx->window = SDL_CreateWindow("window", 1512, 982, 0);
+    SDL_PropertiesID props = SDL_CreateProperties();
+    SDL_SetPointerProperty(props, SDL_PROP_RENDERER_CREATE_WINDOW_POINTER, sdlctx->window);
+    SDL_SetNumberProperty(props, SDL_PROP_RENDERER_CREATE_OUTPUT_COLORSPACE_NUMBER, SDL_COLORSPACE_SRGB);
+    sdlctx->renderer = SDL_CreateRendererWithProperties(props);
+    SDL_DestroyProperties(props);
+    
+    //sdlctx->renderer = SDL_CreateRenderer(sdlctx->window, NULL);
+    
+    //SDL_SetRenderDrawBlendMode(sdlctx->renderer, SDL_BLENDMODE_NONE);
     
     SDL_Thread* rthread = SDL_CreateThread(SDL_ThreadFn, "recieverThread", NULL);
     

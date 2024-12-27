@@ -3,6 +3,7 @@
 //
 //  Created by Dora Orak on 15.12.2024.
 //
+#pragma once
 
 #include <iostream>
 #include <sys/socket.h>

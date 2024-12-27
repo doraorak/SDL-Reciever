@@ -5,7 +5,7 @@
 //  Created by Dora Orak on 22.12.2024.
 //
 
-#include "SDLcontext.hpp"
+#include "receiver.hpp"
 
 void SDL_MainThreadFn(void* data){
     sizedPointer passArgs = *(static_cast<sizedPointer*>(data));

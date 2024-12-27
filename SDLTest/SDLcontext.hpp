@@ -4,7 +4,10 @@
 //
 //  Created by Dora Orak on 23.12.2024.
 //
-#include "receiver.hpp"
+#pragma once
+
+#include <SDL3/SDL.h>
+#include <iostream>
 
 class SDLcontext
 {
