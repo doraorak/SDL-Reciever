@@ -45,6 +45,9 @@ int main(int argc, char *argv[]){
     //sdlctx->renderer = SDL_CreateRenderer(sdlctx->window, NULL);
     
     //SDL_SetRenderDrawBlendMode(sdlctx->renderer, SDL_BLENDMODE_NONE);
+    SDL_SetRenderDrawColor(sdlctx->renderer, 200, 20, 50, 255);
+    SDL_RenderClear(sdlctx->renderer);
+    SDL_RenderPresent(sdlctx->renderer);
     
     SDL_Thread* rthread = SDL_CreateThread(SDL_ThreadFn, "recieverThread", NULL);
     
@@ -64,4 +67,6 @@ int main(int argc, char *argv[]){
     SDL_DestroyWindow(sdlctx->window);
     SDL_DestroyRenderer(sdlctx->renderer);
     SDL_Quit();
+    
+    return 0;
 }

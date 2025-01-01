@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14536C8F2D1D4B7B00C219FD /* SDL3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14536C8E2D1D4B7B00C219FD /* SDL3.framework */; };
-		14536C902D1D4B7B00C219FD /* SDL3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14536C8E2D1D4B7B00C219FD /* SDL3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		149404D12D25584A00933C4F /* SDL3.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149404D02D25584A00933C4F /* SDL3.xcframework */; };
+		149404D22D25584A00933C4F /* SDL3.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 149404D02D25584A00933C4F /* SDL3.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,7 +18,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				14536C902D1D4B7B00C219FD /* SDL3.framework in Embed Frameworks */,
+				149404D22D25584A00933C4F /* SDL3.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -27,7 +27,7 @@
 
 /* Begin PBXFileReference section */
 		142645BD2D174D8B00A3A0FD /* SDLTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDLTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		14536C8E2D1D4B7B00C219FD /* SDL3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL3.framework; path = ../../../../../Library/Frameworks/SDL3.framework; sourceTree = "<group>"; };
+		149404D02D25584A00933C4F /* SDL3.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDL3.xcframework; path = ../../../../../Library/Frameworks/SDL3.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14536C8F2D1D4B7B00C219FD /* SDL3.framework in Frameworks */,
+				149404D12D25584A00933C4F /* SDL3.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +70,7 @@
 		142717052D17A61000F44ACF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				14536C8E2D1D4B7B00C219FD /* SDL3.framework */,
+				149404D02D25584A00933C4F /* SDL3.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -234,11 +234,13 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_KEY_NSPrincipalClass = UIApplication;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					/Library/Frameworks,
+					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
@@ -249,7 +251,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.doraorak.SDLTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -312,11 +317,13 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_KEY_NSPrincipalClass = UIApplication;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					/Library/Frameworks,
+					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
@@ -326,7 +333,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.doraorak.SDLTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
