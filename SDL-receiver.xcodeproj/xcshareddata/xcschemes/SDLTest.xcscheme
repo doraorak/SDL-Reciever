@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "142645BC2D174D8B00A3A0FD"
-               BuildableName = "SDLTest.app"
-               BlueprintName = "SDLTest"
-               ReferencedContainer = "container:SDLTest.xcodeproj">
+               BuildableName = "SDL-receiver.app"
+               BlueprintName = "SDL-receiver"
+               ReferencedContainer = "container:SDL-receiver.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "142645BC2D174D8B00A3A0FD"
-            BuildableName = "SDLTest.app"
-            BlueprintName = "SDLTest"
-            ReferencedContainer = "container:SDLTest.xcodeproj">
+            BuildableName = "SDL-receiver.app"
+            BlueprintName = "SDL-receiver"
+            ReferencedContainer = "container:SDL-receiver.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -63,9 +63,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "142645BC2D174D8B00A3A0FD"
-            BuildableName = "SDLTest.app"
-            BlueprintName = "SDLTest"
-            ReferencedContainer = "container:SDLTest.xcodeproj">
+            BuildableName = "SDL-receiver.app"
+            BlueprintName = "SDL-receiver"
+            ReferencedContainer = "container:SDL-receiver.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

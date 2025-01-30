@@ -23,7 +23,8 @@ public:
         unsigned byteOffset;
         unsigned byteCount;
         unsigned frameSize;
-        char bytes[4080]; // pick a number
+        unsigned stride;
+        char bytes[1472]; // pick a number
         
     } typedef packet;
     
@@ -39,6 +40,18 @@ public:
         receiverAddr.sin_port = htons(27779); // Port number
         receiverAddr.sin_addr.s_addr = INADDR_ANY;
         
+        /*
+        struct timeval timeout;
+            timeout.tv_sec = 0;  // Timeout in seconds
+            timeout.tv_usec = 600000; // Timeout in microseconds
+
+            if (setsockopt(socketfd, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout)) < 0) {
+                perror("setsockopt failed");
+                close(socketfd);
+                return 1;
+            }
+        
+        */
         
         if((bind(socketfd, (struct sockaddr *)&receiverAddr, sizeof(receiverAddr))) != 0) {
             std::cout << "Error binding socket"  << strerror(errno) << "\n";;
@@ -54,7 +67,7 @@ public:
     size_t receiveData(void* buf){
         size_t size = sizeof(packet);
         
-        return recv(socketfd, buf, size, 0);
+        return recvfrom(socketfd, buf, size, 0, NULL, 0);
         
     }
     

@@ -49,6 +49,8 @@ int main(int argc, char *argv[]){
     SDL_RenderClear(sdlctx->renderer);
     SDL_RenderPresent(sdlctx->renderer);
     
+    SDL_SetRenderVSync(sdlctx->renderer, SDL_RENDERER_VSYNC_ADAPTIVE);
+    
     SDL_Thread* rthread = SDL_CreateThread(SDL_ThreadFn, "recieverThread", NULL);
     
     int running = 1;

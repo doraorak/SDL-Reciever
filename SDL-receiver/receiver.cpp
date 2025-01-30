@@ -8,8 +8,8 @@
 #include "receiver.hpp"
 
 void SDL_MainThreadFn(void* data){
-    sizedPointer passArgs = *(static_cast<sizedPointer*>(data));
-    sdlctx->drawPixelBuffer(passArgs.ptr, passArgs.size);
+    passArgs pArgs = *(static_cast<passArgs*>(data));
+    sdlctx->drawPixelBuffer(pArgs.ptr, pArgs.size, pArgs.stride);
 }
 
 void receiver::processPacket(connection::packet* packet){
@@ -27,11 +27,12 @@ void receiver::processPacket(connection::packet* packet){
     
     if(packet->byteOffset == packet->frameSize - packet->byteCount){ //arc4random_uniform(5000) == 0
                 
-        sizedPointer passArgs;
-        passArgs.ptr = (_rbytes);
-        passArgs.size = (packet->frameSize);
+        passArgs pArgs;
+        pArgs.ptr = (_rbytes);
+        pArgs.size = (packet->frameSize);
+        pArgs.stride = (packet->stride);
         
-        SDL_RunOnMainThread(SDL_MainThreadFn, &passArgs, true);
+        SDL_RunOnMainThread(SDL_MainThreadFn, &pArgs, true);
     }
 }
 
@@ -45,7 +46,6 @@ void receiver::receiveLoop(){
         
         if (size < 1){
             std::cout << "error rcv";
-            
         }
         else{
             this->processPacket(&pkt);

@@ -17,7 +17,7 @@ public:
     SDL_Texture* texture;
     SDL_Surface* surface;
     
-    void drawPixelBuffer(void* pb, size_t size);
+    void drawPixelBuffer(void* pb, size_t size, size_t stride);
 };
 
 
@@ -25,7 +25,8 @@ typedef struct {
     
     void* ptr;
     size_t size;
+    size_t stride;
     
-} sizedPointer;
+} passArgs;
 
 extern std::unique_ptr<SDLcontext> sdlctx;
